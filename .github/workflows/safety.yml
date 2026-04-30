@@ -9,7 +9,7 @@ jobs:
       - name: Get the code
         uses: actions/checkout@v5
 
-           - name: Block disallowed <script> usage
+      - name: Block disallowed <script> usage
         run: |
           echo "Checking these HTML files:"
           find . -name "*.html" -not -path "./.git/*" -print
@@ -22,7 +22,7 @@ jobs:
             exit 1
           fi
           echo "OK: only safe <script src> usage detected."
-      
+
       - name: Lint CSS
         run: npx --yes stylelint "**/*.css"
           
